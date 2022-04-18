@@ -1,5 +1,5 @@
 .img-grid {
-  margin: 20px auto;
+  margin: 20px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 40px;
@@ -8,16 +8,31 @@
   overflow: hidden;
   height: 0;
   padding: 50% 0;
-  /* padding controls height, will always be perfectly square regardless of width */
   position: relative;
   opacity: 0.8;
+  border-radius: 0.5rem;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 
   img {
     min-width: 100%;
     min-height: 100%;
     max-width: 150%;
     position: absolute;
+    object-fit: cover;
     top: 0;
     left: 0;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .img-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .img-grid {
+    grid-template-columns: 1fr;
   }
 }
